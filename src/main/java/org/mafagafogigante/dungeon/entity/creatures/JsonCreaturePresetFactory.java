@@ -1,5 +1,7 @@
 package org.mafagafogigante.dungeon.entity.creatures;
 
+//contains deafult weight and item number limits
+
 import org.mafagafogigante.dungeon.entity.Luminosity;
 import org.mafagafogigante.dungeon.entity.TagSet;
 import org.mafagafogigante.dungeon.entity.Weight;
