@@ -1,3 +1,5 @@
+// Have to add an setInventory method in order to change carry capacity.
+
 package org.mafagafogigante.dungeon.entity.items;
 
 import org.mafagafogigante.dungeon.entity.Weight;
