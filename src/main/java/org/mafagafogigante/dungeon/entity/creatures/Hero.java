@@ -371,12 +371,36 @@ public class Hero extends Creature {
     if (selectedItem != null) {
       if (selectedItem.hasTag(Item.Tag.WEAPON)) {
         equipWeapon(selectedItem);
+      //else if(selectedItem.hasTag(Item.Tag.BAG)) {
+      //equipBag(selectedItem);
       } else {
         Writer.write("You cannot equip that.");
       }
     }
   }
-
+  
+  //Method to equip a bag. Have to add bag to the Item class.
+  /*
+  public void equipBag(Item bag) {
+    if (hasBag()) {
+      if (getBag() == bag) {
+        Writer.write("The bag has already been equipped.");
+        return;
+      }
+    }
+    Engine.rollDateAndRefresh(SECONDS_TO_EQUIP);
+    if (getInventory().hasItem(bag)) {
+      setBag(bag);
+      DungeonString string = new DungeonString();
+      string.append(getName() + " equipped " + bag.getName() + ".");
+      Writer.write(string);
+    } else {
+      HeroUtils.writeNoLongerInInventoryMessage(bag);
+    }
+    
+  }
+*/
+  
   /**
    * Attempts to drop items from the inventory.
    */
