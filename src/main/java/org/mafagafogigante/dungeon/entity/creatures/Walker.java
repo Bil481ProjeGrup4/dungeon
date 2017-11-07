@@ -39,7 +39,21 @@ class Walker implements Serializable {
       Writer.write(new DungeonString("To where?", Color.ORANGE));
     }
   }
-
+/*
+  public void parseTravel(String[] arguments) {
+    if(arguments.length==3) { //uzunluk kontrol
+      int cx = Integer.parseInt(arguments[0]);
+      int cy = Integer.parseInt(arguments[1]);
+      int cz = Integer.parseInt(arguments[2]);
+      travel(cx,cy,cz);
+    }
+    Writer.write("Invalid input.");
+  }
+  
+  public void travel(int cx,int cy,int cz) {
+    //isinlanma burda yapilicak.
+  }
+*/
   /**
    * Attempts to move the hero in a given direction.
    *

@@ -149,6 +149,13 @@ final class CommandSets {
         Game.getGameState().getHero().walk(arguments);
       }
     });
+    /*commandSet.addCommand(new Command("travel", "Makes the character move into the specified coordinates.") {
+      @Override
+      public void execute(@NotNull String[] arguments) {
+        Game.getGameState().getHero().//buraya asil isinlanma yapan metod gelicek;
+      }
+    });*/
+    //Bu parca kodda ısınlanmanın cagirilacagi parca
     commandSet.addCommand(new Command("items", "Lists the items in the character's inventory.") {
       @Override
       public void execute(@NotNull String[] arguments) {
