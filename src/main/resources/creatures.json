@@ -1,10 +1,10 @@
-{
+{ 
   "creatures": [
     {
       "id": "HERO",
       "type": "Hero",
       "name": {
-        "singular": "Seth"
+        "singular": "Sethq"
       },
       "tags": [
         "CORPSE"

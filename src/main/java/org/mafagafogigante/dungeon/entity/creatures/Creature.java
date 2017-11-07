@@ -36,6 +36,7 @@ public class Creature extends Entity {
   private final Observer observer = new Observer(this);
   BattleLog battleLog = DummyBattleLog.getInstance();
   private Item weapon;
+  //  private Item bag = null;     //when i implement the Bag class this line will be uncommented.
   private Location location;
 
   /**
@@ -190,6 +191,30 @@ public class Creature extends Entity {
   public void unsetWeapon() {
     this.weapon = null;
   }
+  
+  //when i implement the Bag class this method will be uncommented.
+  //Method below will equip a bag and will increase the carrying capacity.
+  /*
+  public void setBag(Bag bag) {
+    if(inventory.hasItem(bag)){
+      if(bag.hasTag(Item.Tag.BAG))
+        this.bag = bag;
+      else
+        DungeonLogger.warning(String.format("Tried to equip %s (no BAG tag) on %s", bag.getName(), getName()));
+    }
+    else {
+        DungeonLogger.warning("Tried to equip an Item that is not in the inventory of " + getName() + ".");
+    }
+  }
+  
+  public Item getBag() {
+    return bag;
+  }
+  
+  boolean hasBag() {
+    return getBag() != null;
+  }
+  */
 
   public Location getLocation() {
     return location;

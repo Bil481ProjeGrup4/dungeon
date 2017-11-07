@@ -228,6 +228,8 @@ public final class SpellData {
     });
   }
 
+  //Going to add spell operation here
+    //putSpell(new Spell("IMMORTAL", "Immortal") {
   private SpellData() {
   }
 

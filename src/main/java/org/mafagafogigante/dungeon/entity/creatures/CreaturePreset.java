@@ -1,5 +1,7 @@
 package org.mafagafogigante.dungeon.entity.creatures;
 
+//may need to call this class' setInventoryWeightLimit in order to change carrying capacity.
+
 import org.mafagafogigante.dungeon.entity.Luminosity;
 import org.mafagafogigante.dungeon.entity.Preset;
 import org.mafagafogigante.dungeon.entity.TagSet;

@@ -9,6 +9,7 @@
 Ibrahim Burak Şahin has been added to the Project.
 Mithat Kurt has been added to the Project.
 Yalım Çağatay Bilgin has been added to the project.
+Murat Bahadır Demiröz has been added to the project.
 
 Dungeon is a text-based open-world role-playing-game. You are in control of the
 life of a character that wakes up with a headache and can't remember exactly

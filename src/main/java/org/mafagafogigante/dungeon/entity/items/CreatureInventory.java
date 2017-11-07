@@ -1,3 +1,5 @@
+// Have to add an setInventory method in order to change carry capacity.
+
 package org.mafagafogigante.dungeon.entity.items;
 
 import org.mafagafogigante.dungeon.entity.Weight;
@@ -44,7 +46,12 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
     }
     return sum;
   }
-
+  
+  //written a method in order to set weight limit. So when we get a backpack we can increase our inventory limit.
+  public Weight setWeightLimit(double newLimit){
+    this.weightLimit = newInstance(newLimit);
+  }
+  
   /**
    * Attempts to add an Item to this Inventory. As a precondition, simulateItemAddition should return SUCCESSFUL.
    *
