@@ -55,12 +55,6 @@ public final class ItemPreset implements Preset, Serializable {
     drinkableEffects.add(EffectFactory.getDefaultFactory().getEffect(effectId, effectParameters));
   }
 
-  public Weight getWeightIncrease() {
-  	return weightIncrease;
-  }
-  public void setWeight(Weight weightIncrease) {
-  	this.weightIncrease = weightIncrease;
-  }
   public Id getId() {
     return id;
   }
@@ -151,6 +145,14 @@ public final class ItemPreset implements Preset, Serializable {
 
   void setIntegrityDecrementOnEat(int integrityDecrementOnEat) {
     this.integrityDecrementOnEat = integrityDecrementOnEat;
+  }
+  
+  public void setWeightIncrease(Weight weightIncrease) {
+    this.weightIncrease = weightIncrease;
+  }
+  
+  public Weight getWeightIncrease() {
+    return weightIncrease;
   }
 
   @Override

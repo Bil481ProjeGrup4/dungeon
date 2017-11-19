@@ -199,6 +199,7 @@ public class Creature extends Entity {
     if(inventory.hasItem(bag)){
       if(bag.hasTag(Item.Tag.BAG)) {
         this.bag = bag;
+		    
 	  }
       else {
         DungeonLogger.warning(String.format("Tried to equip %s (no BAG tag) on %s", bag.getName(), getName()));

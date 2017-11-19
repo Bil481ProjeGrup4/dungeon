@@ -1,5 +1,6 @@
 package org.mafagafogigante.dungeon.entity;
 
+import org.mafagafogigante.dungeon.entity.Weight;
 import org.mafagafogigante.dungeon.io.Version;
 import org.mafagafogigante.dungeon.logging.DungeonLogger;
 import org.mafagafogigante.dungeon.util.Percentage;

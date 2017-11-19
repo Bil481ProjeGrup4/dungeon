@@ -36,6 +36,7 @@ public final class Item extends Entity {
   private BagComponent bagComponent;	
   /* The Inventory this Item is in. Should be null whenever this Item is not in an Inventory. */
   private BaseInventory inventory;
+  private Weight weightLimit;
 
   /**
    * Constructs a new Item from the provided preset and with the specified creation date.
@@ -56,7 +57,7 @@ public final class Item extends Entity {
     }
     
     if(hasTag(Tag.BAG)) {
-      Weight weightLimit = preset.getWeightIncrease();
+      weightLimit = preset.getWeightIncrease();
       bagComponent = new BagComponent(weightLimit);
     }
     
@@ -79,6 +80,10 @@ public final class Item extends Entity {
     }
   }
 
+	public Weight getWeightIncrease() {
+    return weightLimit;
+  }
+  
   public Rarity getRarity() {
     return rarity;
   }
@@ -135,7 +140,7 @@ public final class Item extends Entity {
     return weaponComponent;
   }
   
-  public BagComponent getBagComponent() {
+  public BagComponent getBagComponent() {	//added in order to get the specified bag
     return bagComponent;
   }
 

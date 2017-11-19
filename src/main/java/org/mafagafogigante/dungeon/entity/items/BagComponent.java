@@ -1,5 +1,16 @@
 package org.mafagafogigante.dungeon.entity.items;
 
+
+import org.mafagafogigante.dungeon.entity.Integrity;
+import org.mafagafogigante.dungeon.entity.Luminosity;
+import org.mafagafogigante.dungeon.entity.Preset;
+import org.mafagafogigante.dungeon.entity.TagSet;
+import org.mafagafogigante.dungeon.entity.Weight;
+import org.mafagafogigante.dungeon.entity.creatures.Effect;
+import org.mafagafogigante.dungeon.entity.creatures.EffectFactory;
+import org.mafagafogigante.dungeon.entity.items.Item.Tag;
+import org.mafagafogigante.dungeon.game.Id;
+import org.mafagafogigante.dungeon.game.Name;
 import org.mafagafogigante.dungeon.io.Version;
 import org.mafagafogigante.dungeon.util.Percentage;
 
@@ -17,7 +28,6 @@ public class BagComponent implements Serializable {
    */
   BagComponent(Weight weightIncrease) {
     this.weightIncrease = weightIncrease;
-	CreatureInvenory.setWeightLimit(this.weightIncrease);
   }
 
   /**
