@@ -11,11 +11,11 @@ import java.util.List;
 public class BagComponent implements Serializable {
 
   private static final long serialVersionUID = Version.MAJOR;
-  private final int weightIncrease;
+  private final Weight weightIncrease;
   /**
    * Constructs a new BagComponent.
    */
-  BagComponent(int weightIncrease) {
+  BagComponent(Weight weightIncrease) {
     this.weightIncrease = weightIncrease;
 	CreatureInvenory.setWeightLimit(this.weightIncrease);
   }
@@ -23,7 +23,7 @@ public class BagComponent implements Serializable {
   /**
    * Returns the total damage dealt by this weapon.
    */
-  public int getWeightIncrease() {
+  public Weight getWeightIncrease() {
     return weightIncrease;
   }
 }

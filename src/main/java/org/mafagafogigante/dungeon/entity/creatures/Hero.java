@@ -371,8 +371,9 @@ public class Hero extends Creature {
     if (selectedItem != null) {
       if (selectedItem.hasTag(Item.Tag.WEAPON)) {
         equipWeapon(selectedItem);
-      //else if(selectedItem.hasTag(Item.Tag.BAG)) {
-      //equipBag(selectedItem);
+	  }
+      else if(selectedItem.hasTag(Item.Tag.BAG)) {
+        equipBag(selectedItem);
       } else {
         Writer.write("You cannot equip that.");
       }

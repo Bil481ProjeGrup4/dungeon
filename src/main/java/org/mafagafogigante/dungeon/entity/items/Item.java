@@ -56,7 +56,7 @@ public final class Item extends Entity {
     }
     
     if(hasTag(Tag.BAG)) {
-      int weightLimit = preset.getWeightIncrease();
+      Weight weightLimit = preset.getWeightIncrease();
       bagComponent = new BagComponent(weightLimit);
     }
     
