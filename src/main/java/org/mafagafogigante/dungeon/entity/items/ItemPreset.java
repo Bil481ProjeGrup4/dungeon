@@ -45,6 +45,7 @@ public final class ItemPreset implements Preset, Serializable {
   private boolean unique;
   private int drinkableDoses;
   private int integrityDecrementPerDose;
+  private Weight weightIncrease;
 
   List<Effect> getDrinkableEffects() {
     return drinkableEffects;
@@ -54,6 +55,12 @@ public final class ItemPreset implements Preset, Serializable {
     drinkableEffects.add(EffectFactory.getDefaultFactory().getEffect(effectId, effectParameters));
   }
 
+  public Weight getWeightIncrease() {
+  	return weightIncrease;
+  }
+  public void setWeight(Weight weightIncrease) {
+  	this.weightIncrease = weightIncrease;
+  }
   public Id getId() {
     return id;
   }

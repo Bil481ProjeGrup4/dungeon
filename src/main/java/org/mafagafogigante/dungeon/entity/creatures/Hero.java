@@ -380,7 +380,6 @@ public class Hero extends Creature {
   }
   
   //Method to equip a bag. Have to add bag to the Item class.
-  /*
   public void equipBag(Item bag) {
     if (hasBag()) {
       if (getBag() == bag) {
@@ -399,7 +398,7 @@ public class Hero extends Creature {
     }
     
   }
-*/
+
   
   /**
    * Attempts to drop items from the inventory.

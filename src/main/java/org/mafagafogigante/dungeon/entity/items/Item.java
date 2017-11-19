@@ -33,6 +33,7 @@ public final class Item extends Entity {
   private DrinkableComponent drinkableComponent;
   private ClockComponent clockComponent;
   private BookComponent bookComponent;
+  private BagComponent bagComponent;	
   /* The Inventory this Item is in. Should be null whenever this Item is not in an Inventory. */
   private BaseInventory inventory;
 
@@ -53,6 +54,12 @@ public final class Item extends Entity {
       int integrityDecrementOnHit = preset.getIntegrityDecrementOnHit();
       weaponComponent = new WeaponComponent(damage, hitRate, integrityDecrementOnHit);
     }
+    
+    if(hasTag(Tag.BAG)) {
+      int weightLimit = preset.getWeightIncrease();
+      bagComponent = new BagComponent(weightLimit);
+    }
+    
     if (hasTag(Tag.FOOD)) {
       foodComponent = new FoodComponent(preset.getNutrition(), preset.getIntegrityDecrementOnEat());
     }
@@ -127,6 +134,10 @@ public final class Item extends Entity {
   public WeaponComponent getWeaponComponent() {
     return weaponComponent;
   }
+  
+  public BagComponent getBagComponent() {
+    return bagComponent;
+  }
 
   public FoodComponent getFoodComponent() {
     return foodComponent;
@@ -194,6 +205,6 @@ public final class Item extends Entity {
     return getName().toString();
   }
 
-  public enum Tag {WEAPON, FOOD, DRINKABLE, CLOCK, BOOK, DECOMPOSES, REPAIRABLE, WEIGHT_PROPORTIONAL_TO_INTEGRITY}
+  public enum Tag {BAG, WEAPON, FOOD, DRINKABLE, CLOCK, BOOK, DECOMPOSES, REPAIRABLE, WEIGHT_PROPORTIONAL_TO_INTEGRITY}
 
 }
