@@ -375,7 +375,7 @@ public class Hero extends Creature {
 /*    else if(selectedItem.hasTag(Item.Tag.BAG)) {
         equipBag(selectedItem);
       } 
-*/	  else {
+*/    else {
         Writer.write("You cannot equip that.");
       }
     }
@@ -397,7 +397,7 @@ public class Hero extends Creature {
       Writer.write(string);
     } else {
       HeroUtils.writeNoLongerInInventoryMessage(bag);
-    }   
+    }    
   }
 */
   
@@ -827,9 +827,9 @@ public class Hero extends Creature {
     walker.parseHeroWalk(arguments);
   }
 
-  /*public void travel(String[] arguments) {
-    walker.parseTeleport(arguments); //walker classı icine yazıcagim teleport metodunu cagirir.
-  }*/
+  public void travel(String[] arguments) {
+    walker.parseTravel(arguments); //walker classı icine yazıcagim teleport metodunu cagirir.
+  }
   
   /**
    * Gets the easiest-to-access unbroken clock of the Hero. If the Hero has no unbroken clock, the easiest-to-access

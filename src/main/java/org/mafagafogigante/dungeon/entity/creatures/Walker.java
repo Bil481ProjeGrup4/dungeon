@@ -39,7 +39,7 @@ class Walker implements Serializable {
       Writer.write(new DungeonString("To where?", Color.ORANGE));
     }
   }
-/*
+
   public void parseTravel(String[] arguments) {
     if(arguments.length==3) { //uzunluk kontrol
       int cx = Integer.parseInt(arguments[0]);
@@ -47,13 +47,26 @@ class Walker implements Serializable {
       int cz = Integer.parseInt(arguments[2]);
       travel(cx,cy,cz);
     }
-    Writer.write("Invalid input.");
+	else {
+    	Writer.write("Invalid input.");
+	}
   }
   
   public void travel(int cx,int cy,int cz) {
+	GameState gameState = Game.getGameState();
+    World world = gameState.getWorld();
+	 Point destinationPoint = new Point(cx,cy,cz);
+	 Hero hero = gameState.getHero();
+      Engine.rollDateAndRefresh(WALK_SUCCESS); // Time spent walking.
+      hero.getLocation().removeCreature(hero);
+      world.getLocation(destinationPoint).addCreature(hero);
+      gameState.setHeroPosition(destinationPoint);
+      Engine.refresh(); // Hero arrived in a new location, refresh the game.
+      hero.look();
+      updateExplorationStatistics(destinationPoint);
     //isinlanma burda yapilicak.
   }
-*/
+
   /**
    * Attempts to move the hero in a given direction.
    *
