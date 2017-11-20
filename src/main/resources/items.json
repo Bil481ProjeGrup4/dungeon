@@ -1254,6 +1254,30 @@
       "spell": "UNVEIL"
     },
     {
+      "id": "TOME_OF_IMMORTAL",
+      "type": "Book",
+      "name": {
+        "singular": "Tome of Immortal",
+        "plural": "Tomes of Immortal"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON",
+        "BOOK"
+      ],
+      "integrity": {
+        "current": 20,
+        "maximum": 20
+      },
+      "weight": 0.9,
+      "visibility": "100.00%",
+      "damage": 8,
+      "hitRate": "5.00%",
+      "integrityDecrementOnHit": 4,
+      "text": "The Immortal spell lets you to become immortal for 30 seconds. At least 5 minutes must pass since the previous usage.",
+      "spell": "IMMORTAL"
+    },
+    {
       "id": "TOME_OF_PERCEIVE",
       "type": "Book",
       "name": {
