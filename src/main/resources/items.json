@@ -1,28 +1,5 @@
 {
   "items": [
-	{
-      "id": "Small Bag",
-      "type": "BAG",
-      "name": {
-        "singular": "Small Bag",
-        "plural": "Small Bags"
-      },
-      "rarity": "COMMON",
-      "tags": [
-        "BAG"
-      ],
-      "integrity": {
-        "current": 10,
-        "maximum": 10
-      },
-      "weight": 0.50,
-	  "weightIncrease": 15,	
-      "visibility": "100.00%",
-      "damage": 3,
-      "hitRate": "65.00%",
-      "integrityDecrementOnHit": 5,
-      "luminosity": "40.00%"
-	}
     {
       "id": "TORCH",
       "type": "Tool",

@@ -372,14 +372,15 @@ public class Hero extends Creature {
       if (selectedItem.hasTag(Item.Tag.WEAPON)) {
         equipWeapon(selectedItem);
 	  }
-      else if(selectedItem.hasTag(Item.Tag.BAG)) {
+/*    else if(selectedItem.hasTag(Item.Tag.BAG)) {
         equipBag(selectedItem);
-      } else {
+      } 
+*/	  else {
         Writer.write("You cannot equip that.");
       }
     }
   }
-  
+/*  
   //Method to equip a bag. Have to add bag to the Item class.
   public void equipBag(Item bag) {
     if (hasBag()) {
@@ -396,10 +397,9 @@ public class Hero extends Creature {
       Writer.write(string);
     } else {
       HeroUtils.writeNoLongerInInventoryMessage(bag);
-    }
-    
+    }   
   }
-
+*/
   
   /**
    * Attempts to drop items from the inventory.
