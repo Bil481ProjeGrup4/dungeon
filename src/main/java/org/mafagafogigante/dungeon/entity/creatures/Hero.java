@@ -372,15 +372,15 @@ public class Hero extends Creature {
       if (selectedItem.hasTag(Item.Tag.WEAPON)) {
         equipWeapon(selectedItem);
 	  }
-/*    else if(selectedItem.hasTag(Item.Tag.BAG)) {
+      else if(selectedItem.hasTag(Item.Tag.BAG)) {
         equipBag(selectedItem);
       } 
-*/    else {
+      else {
         Writer.write("You cannot equip that.");
       }
     }
   }
-/*  
+ 
   //Method to equip a bag. Have to add bag to the Item class.
   public void equipBag(Item bag) {
     if (hasBag()) {
@@ -399,7 +399,7 @@ public class Hero extends Creature {
       HeroUtils.writeNoLongerInInventoryMessage(bag);
     }    
   }
-*/
+
   
   /**
    * Attempts to drop items from the inventory.
@@ -826,11 +826,11 @@ public class Hero extends Creature {
   public void walk(String[] arguments) {
     walker.parseHeroWalk(arguments);
   }
-
+/*
   public void travel(String[] arguments) {
     walker.parseTravel(arguments); //walker classı icine yazıcagim teleport metodunu cagirir.
   }
-  
+*/  
   /**
    * Gets the easiest-to-access unbroken clock of the Hero. If the Hero has no unbroken clock, the easiest-to-access
    * broken clock. Lastly, if the Hero does not have a clock at all, null is returned.

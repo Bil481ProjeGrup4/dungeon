@@ -22,6 +22,28 @@
       "integrityDecrementOnHit": 5,
       "luminosity": "40.00%"
     },
+	  {
+
+      "id": "BACK_PACK",
+      "type": "Misc",
+      "name": {
+        "singular": "Red Backpack"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "BAG",
+		"WEAPON"
+      ],
+      "integrity": {
+        "current": 10,
+        "maximum": 10
+      },
+      "weight": 15.0,
+      "visibility": "100.00%",
+      "damage": 6,
+      "hitRate": "50.00%",
+      "integrityDecrementOnHit": 10
+    },  
     {
       "id": "APPLE",
       "type": "Food",

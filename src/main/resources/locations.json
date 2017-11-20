@@ -24,6 +24,10 @@
           "probability": 0.15
         },
         {
+          "id": "BACK_PACK",
+          "probability": 1.0
+        },  
+        {
           "id": "FLAIL",
           "probability": 0.2
         }

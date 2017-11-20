@@ -36,7 +36,7 @@ public class Creature extends Entity {
   private final Observer observer = new Observer(this);
   BattleLog battleLog = DummyBattleLog.getInstance();
   private Item weapon;
-//  private Item bag = null;     //when i implement the Bag class this line will be uncommented.
+  private Item bag;     //when i implement the Bag class this line will be uncommented.
   private Location location;
 
   /**
@@ -191,7 +191,7 @@ public class Creature extends Entity {
   public void unsetWeapon() {
     this.weapon = null;
   }
-/*  
+  
   //when i implement the Bag class this method will be uncommented.
   //Method below will equip a bag and will increase the carrying capacity.
   
@@ -218,7 +218,7 @@ public class Creature extends Entity {
     return getBag() != null;
   }
   
-*/
+
   public Location getLocation() {
     return location;
   }
