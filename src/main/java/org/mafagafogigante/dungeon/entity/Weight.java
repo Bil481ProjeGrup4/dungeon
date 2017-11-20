@@ -27,7 +27,7 @@ public class Weight implements Comparable<Weight>, Serializable {
 
   private final double value;
 
-  private Weight(double value) {
+  public Weight(double value) {
     this.value = value;
   }
 

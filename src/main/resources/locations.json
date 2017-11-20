@@ -23,8 +23,8 @@
           "id": "TOME_OF_HEAL",
           "probability": 0.15
         },
-        {
-          "id": "BACK_PACK",
+		{
+          "id": "RED_BAG",
           "probability": 1.0
         },  
         {

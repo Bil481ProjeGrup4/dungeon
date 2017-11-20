@@ -22,27 +22,25 @@
       "integrityDecrementOnHit": 5,
       "luminosity": "40.00%"
     },
-	  {
-
-      "id": "BACK_PACK",
-      "type": "Misc",
+	{
+      "id": "RED_BAG",
+      "type": "Weapon",
       "name": {
-        "singular": "Red Backpack"
+        "singular": "Red Bag"
       },
       "rarity": "COMMON",
       "tags": [
-        "BAG",
-		"WEAPON"
+        "WEAPON"
       ],
       "integrity": {
-        "current": 10,
-        "maximum": 10
+        "current": 90,
+        "maximum": 90
       },
-      "weight": 15.0,
-      "visibility": "100.00%",
-      "damage": 6,
-      "hitRate": "50.00%",
-      "integrityDecrementOnHit": 10
+      "weight": 1.1,
+      "visibility": "65.00%",
+      "damage": 15,
+      "hitRate": "80.00%",
+      "integrityDecrementOnHit": 1
     },  
     {
       "id": "APPLE",
@@ -1274,30 +1272,6 @@
       "integrityDecrementOnHit": 4,
       "text": "The Unveil spell removes all veils that afflict a creature.",
       "spell": "UNVEIL"
-    },
-    {
-      "id": "TOME_OF_IMMORTAL",
-      "type": "Book",
-      "name": {
-        "singular": "Tome of Immortal",
-        "plural": "Tomes of Immortal"
-      },
-      "rarity": "COMMON",
-      "tags": [
-        "WEAPON",
-        "BOOK"
-      ],
-      "integrity": {
-        "current": 20,
-        "maximum": 20
-      },
-      "weight": 0.9,
-      "visibility": "100.00%",
-      "damage": 8,
-      "hitRate": "5.00%",
-      "integrityDecrementOnHit": 4,
-      "text": "The Immortal spell lets you to become immortal for 30 seconds. At least 5 minutes must pass since the previous usage.",
-      "spell": "IMMORTAL"
     },
     {
       "id": "TOME_OF_PERCEIVE",

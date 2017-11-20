@@ -26,6 +26,7 @@ public class WeaponComponent implements Serializable {
    * Constructs a new WeaponComponent.
    */
   WeaponComponent(int damage, Percentage hitRate, int integrityDecrementOnHit) {
+	  
     this.damage = damage;
     this.hitRate = hitRate;
     this.integrityDecrementOnHit = integrityDecrementOnHit;
@@ -58,5 +59,4 @@ public class WeaponComponent implements Serializable {
   public List<Enchantment> getEnchantments() {
     return enchantments;
   }
-
 }
