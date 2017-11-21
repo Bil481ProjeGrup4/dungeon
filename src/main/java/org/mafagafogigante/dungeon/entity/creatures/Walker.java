@@ -50,6 +50,18 @@ class Walker implements Serializable {
   }
   
   public void travel(int cx,int cy,int cz) {
+    GameState gameState = Game.getGameState();
+    World world = gameState.getWorld();
+    Point point = gameState.getHero().getLocation().getPoint();
+    Point destinationPoint = new Point(cx,cy,cz);
+    Hero hero = gameState.getHero();
+    Engine.rollDateAndRefresh(WALK_SUCCESS); // Time spent walking.
+    hero.getLocation().removeCreature(hero);
+    world.getLocation(destinationPoint).addCreature(hero);
+    gameState.setHeroPosition(destinationPoint);
+    Engine.refresh(); // Hero arrived in a new location, refresh the game.
+    hero.look();
+    updateExplorationStatistics(destinationPoint);
     //isinlanma burda yapilicak.
   }
   /**
