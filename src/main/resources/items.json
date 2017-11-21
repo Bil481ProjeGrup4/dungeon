@@ -22,6 +22,26 @@
       "integrityDecrementOnHit": 5,
       "luminosity": "40.00%"
     },
+	{
+      "id": "RED_BAG",
+      "type": "Weapon",
+      "name": {
+        "singular": "Red Bag"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON"
+      ],
+      "integrity": {
+        "current": 90,
+        "maximum": 90
+      },
+      "weight": 1.1,
+      "visibility": "65.00%",
+      "damage": 15,
+      "hitRate": "80.00%",
+      "integrityDecrementOnHit": 1
+    },  
     {
       "id": "APPLE",
       "type": "Food",
@@ -1534,3 +1554,5 @@
     }
   ]
 }
+      //Tome Of Immortal feature to be added here
+      //Eşyaların saklandığı json dosyası tespit edildi.Eşya ilk burada initialize edilecek sanırım.

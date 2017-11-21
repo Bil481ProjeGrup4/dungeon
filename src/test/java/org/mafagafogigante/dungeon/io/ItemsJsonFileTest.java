@@ -41,6 +41,8 @@ public class ItemsJsonFileTest extends ResourcesTypeTest {
   private static final String DRINKABLE_HEALING_FIELD = "drinkableHealing";
   private static final String DRINKABLE_EFFECTS_FIELD = "drinkableEffects";
   private static final String INTEGRITY_DECREMENT_PER_DOSE_FIELD = "integrityDecrementPerDose";
+  private static final String WEIGHT_INCREASE_FIELD = "weightIncrease";
+	
 
   @Test
   public void testIsFileHasValidStructure() {

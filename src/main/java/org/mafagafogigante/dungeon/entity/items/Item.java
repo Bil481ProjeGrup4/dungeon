@@ -33,8 +33,10 @@ public final class Item extends Entity {
   private DrinkableComponent drinkableComponent;
   private ClockComponent clockComponent;
   private BookComponent bookComponent;
+//  private BagComponent bagComponent;	
   /* The Inventory this Item is in. Should be null whenever this Item is not in an Inventory. */
   private BaseInventory inventory;
+  private Weight weightLimit;
 
   /**
    * Constructs a new Item from the provided preset and with the specified creation date.
@@ -47,12 +49,21 @@ public final class Item extends Entity {
     decompositionPeriod = preset.getPutrefactionPeriod();
     integrity = ItemIntegrity.makeItemIntegrity(preset.getIntegrity(), this);
     lightSource = new LightSource(preset.getLuminosity());
-    if (hasTag(Tag.WEAPON)) {
+    if (hasTag(Tag.WEAPON)) {      
       int damage = preset.getDamage();
       Percentage hitRate = preset.getHitRate();
       int integrityDecrementOnHit = preset.getIntegrityDecrementOnHit();
       weaponComponent = new WeaponComponent(damage, hitRate, integrityDecrementOnHit);
+      if(preset.getName().getSingular().contains("Bag")) {
+          weightLimit = new Weight(damage); 
+      }
     }
+/*    
+    if(hasTag(Tag.BAG)) {
+      weightLimit = preset.getWeightIncrease();
+      bagComponent = new BagComponent(weightLimit);
+    }
+*/   
     if (hasTag(Tag.FOOD)) {
       foodComponent = new FoodComponent(preset.getNutrition(), preset.getIntegrityDecrementOnEat());
     }
@@ -72,6 +83,10 @@ public final class Item extends Entity {
     }
   }
 
+/*	public Weight getWeightIncrease() {
+    return weightLimit;
+  }
+*/  
   public Rarity getRarity() {
     return rarity;
   }
@@ -127,7 +142,11 @@ public final class Item extends Entity {
   public WeaponComponent getWeaponComponent() {
     return weaponComponent;
   }
-
+  
+/*  public BagComponent getBagComponent() {	//added in order to get the specified bag
+    return bagComponent;
+  }
+*/
   public FoodComponent getFoodComponent() {
     return foodComponent;
   }
@@ -194,6 +213,7 @@ public final class Item extends Entity {
     return getName().toString();
   }
 
-  public enum Tag {WEAPON, FOOD, DRINKABLE, CLOCK, BOOK, DECOMPOSES, REPAIRABLE, WEIGHT_PROPORTIONAL_TO_INTEGRITY}
+//public enum Tag {BAG, WEAPON, FOOD, DRINKABLE, CLOCK, BOOK, DECOMPOSES, REPAIRABLE, WEIGHT_PROPORTIONAL_TO_INTEGRITY}
+  public enum Tag {WEAPON, FOOD, DRINKABLE, CLOCK, BOOK, DECOMPOSES, REPAIRABLE, WEIGHT_PROPORTIONAL_TO_INTEGRITY}	
 
 }

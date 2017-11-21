@@ -110,7 +110,7 @@ public final class CreaturePreset implements Preset, Serializable {
     this.health = health;
   }
 
-  public int getAttack() {
+  public int getAttack() { //return 0 if the hero has immortal spell casted on him
     return attack;
   }
 

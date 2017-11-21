@@ -16,7 +16,7 @@ public class BookComponent implements Serializable {
   private static final long serialVersionUID = Version.MAJOR;
   private static final int SECONDS_PER_CHARACTER = 1;
   private final Id spellId;
-  private final String text;
+  private final String text;  //will use this class when creating Tome Of Immortal 
 
   /**
    * Creates a new BookComponent from a spell Id and a string of text.

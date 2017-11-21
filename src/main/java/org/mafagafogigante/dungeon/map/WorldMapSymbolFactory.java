@@ -41,5 +41,5 @@ final class WorldMapSymbolFactory {
       return WorldMapSymbol.getNotYetGeneratedSymbol();
     }
   }
-
+//Map'te çevremi göstereceğim için burası işime yarayabilir.
 }

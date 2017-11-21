@@ -1,4 +1,3 @@
-//This file contains the MAIN method.
 package org.mafagafogigante.dungeon.game;
 
 import org.mafagafogigante.dungeon.commands.IssuedCommand;

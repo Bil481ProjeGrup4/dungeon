@@ -45,6 +45,7 @@ public final class ItemPreset implements Preset, Serializable {
   private boolean unique;
   private int drinkableDoses;
   private int integrityDecrementPerDose;
+//  private Weight weightIncrease;
 
   List<Effect> getDrinkableEffects() {
     return drinkableEffects;
@@ -145,7 +146,15 @@ public final class ItemPreset implements Preset, Serializable {
   void setIntegrityDecrementOnEat(int integrityDecrementOnEat) {
     this.integrityDecrementOnEat = integrityDecrementOnEat;
   }
-
+  
+/*public void setWeightIncrease(Weight weightIncrease) {
+    this.weightIncrease = weightIncrease;
+  }
+  
+  public Weight getWeightIncrease() {
+    return weightIncrease;
+  }
+*/
   @Override
   public Weight getWeight() {
     return weight;

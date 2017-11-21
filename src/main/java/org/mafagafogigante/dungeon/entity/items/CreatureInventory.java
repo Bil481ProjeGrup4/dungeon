@@ -15,7 +15,7 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
   private static final long serialVersionUID = Version.MAJOR;
   private final Creature owner;
   private final int itemLimit;
-  private final Weight weightLimit;
+  public Weight weightLimit;
 
   /**
    * Constructs a new CreatureInventory.
@@ -35,10 +35,9 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
   public Weight getWeightLimit() {
     return weightLimit;
   }
-
   /**
-   * Retrieves the sum of the weights of the individual items on this inventory.
-   */
+  * Retrieves the sum of the weights of the individual items on this inventory.
+  */
   public Weight getWeight() {
     Weight sum = Weight.ZERO;
     for (Item item : getItems()) {
@@ -48,10 +47,10 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
   }
   
   //written a method in order to set weight limit. So when we get a backpack we can increase our inventory limit.
-  public Weight setWeightLimit(double newLimit){
-    this.weightLimit = newInstance(newLimit);
+  public void setWeightLimit(int weight) {
+    this.weightLimit = new Weight(weight);
   }
-  
+	
   /**
    * Attempts to add an Item to this Inventory. As a precondition, simulateItemAddition should return SUCCESSFUL.
    *
@@ -75,17 +74,23 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
    * @return a SimulationResult value
    */
   public SimulationResult simulateItemAddition(Item item) {
-    if (hasItem(item)) { // Check that the new item is not already in the inventory.
-      DungeonLogger.warning("Tried to add an item to a CreatureInventory that already has it.");
-      return SimulationResult.ALREADY_IN_THE_INVENTORY;
-    }
-    if (isFull()) {
-      return SimulationResult.AMOUNT_LIMIT;
-    } else if (willExceedWeightLimitAfterAdding(item)) {
-      return SimulationResult.WEIGHT_LIMIT;
-    } else {
+/*    if (item.hasTag(Item.Tag.BAG)) {
+      setWeightLimit(item);
       return SimulationResult.SUCCESSFUL;
     }
+    else{ 
+*/      if (hasItem(item)) { // Check that the new item is not already in the inventory.
+        DungeonLogger.warning("Tried to add an item to a CreatureInventory that already has it.");
+        return SimulationResult.ALREADY_IN_THE_INVENTORY;
+      }
+      if (isFull()) {
+        return SimulationResult.AMOUNT_LIMIT;
+      } else if (willExceedWeightLimitAfterAdding(item)) {
+        return SimulationResult.WEIGHT_LIMIT;
+      } else {
+        return SimulationResult.SUCCESSFUL;
+      }
+//    }
   }
 
   private boolean isFull() {

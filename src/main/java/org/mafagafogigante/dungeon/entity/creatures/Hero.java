@@ -44,6 +44,7 @@ import java.awt.Color;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
+import java.util.*;
 
 /**
  * Hero class that defines the creature that the player controls.
@@ -371,16 +372,17 @@ public class Hero extends Creature {
     if (selectedItem != null) {
       if (selectedItem.hasTag(Item.Tag.WEAPON)) {
         equipWeapon(selectedItem);
-      //else if(selectedItem.hasTag(Item.Tag.BAG)) {
-      //equipBag(selectedItem);
-      } else {
+	  }
+/*    else if(selectedItem.hasTag(Item.Tag.BAG)) {
+        equipBag(selectedItem);
+      } 
+*/	  else {
         Writer.write("You cannot equip that.");
       }
     }
   }
-  
+/*  
   //Method to equip a bag. Have to add bag to the Item class.
-  /*
   public void equipBag(Item bag) {
     if (hasBag()) {
       if (getBag() == bag) {
@@ -396,8 +398,7 @@ public class Hero extends Creature {
       Writer.write(string);
     } else {
       HeroUtils.writeNoLongerInInventoryMessage(bag);
-    }
-    
+    }   
   }
 */
   
@@ -724,7 +725,12 @@ public class Hero extends Creature {
       setWeapon(weapon);
       DungeonString string = new DungeonString();
       string.append(getName() + " equipped " + weapon.getQualifiedName() + ".");
-      string.append(" " + "Your total damage is now " + getTotalDamage() + ".");
+	    if(weapon.getQualifiedName().contains("Bag")) {
+        string.append(" " + "Your total carriage capacity is now " + getTotalDamage() + ".");
+      }
+      else {
+        string.append(" " + "Your total damage is now " + getTotalDamage() + ".");
+      }
       Writer.write(string);
     } else {
       HeroUtils.writeNoLongerInInventoryMessage(weapon);
@@ -784,7 +790,10 @@ public class Hero extends Creature {
     return getAttack() + getWeapon().getWeaponComponent().getDamage();
   }
 
-  /**
+/*  private int getTotalWeight(int weightIncrease) {
+    return CreatureInventory.setWeightLimit(weightIncrease);
+  }
+*/  /**
    * Prints the Hero's age.
    */
   public void printAge() {
