@@ -46,13 +46,14 @@ class Walker implements Serializable {
       int cz = Integer.parseInt(arguments[2]);
       travel(cx,cy,cz);
     }
-    Writer.write("Invalid input.");
+    else {
+      Writer.write("Invalid input.");
+    }
   }
   
   public void travel(int cx,int cy,int cz) {
     GameState gameState = Game.getGameState();
     World world = gameState.getWorld();
-    Point point = gameState.getHero().getLocation().getPoint();
     Point destinationPoint = new Point(cx,cy,cz);
     Hero hero = gameState.getHero();
     Engine.rollDateAndRefresh(WALK_SUCCESS); // Time spent walking.
