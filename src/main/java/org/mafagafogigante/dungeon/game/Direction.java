@@ -13,7 +13,7 @@ public enum Direction {
   DOWN("Down", "D", new Point(0, 0, -1)),
   SOUTH("South", "S", new Point(0, -1, 0)),
   WEST("West", "W", new Point(-1, 0, 0));
-
+  
   private final String name;
   private final String abbreviation;
   private final Point offset;

@@ -826,11 +826,13 @@ public class Hero extends Creature {
   public void walk(String[] arguments) {
     walker.parseHeroWalk(arguments);
   }
-
-  /*public void travel(String[] arguments) {
-    walker.parseTeleport(arguments); //walker classı icine yazıcagim teleport metodunu cagirir.
-  }*/
-  
+/*
+  public void travel(String[] arguments) 
+  {
+    walker.parseTeleport(arguments); 
+    //walker classı icine yazıcagim teleport metodunu cagirir.
+  }
+*/  
   /**
    * Gets the easiest-to-access unbroken clock of the Hero. If the Hero has no unbroken clock, the easiest-to-access
    * broken clock. Lastly, if the Hero does not have a clock at all, null is returned.

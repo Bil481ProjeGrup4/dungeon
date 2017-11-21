@@ -39,7 +39,6 @@ class Walker implements Serializable {
       Writer.write(new DungeonString("To where?", Color.ORANGE));
     }
   }
-/*
   public void parseTravel(String[] arguments) {
     if(arguments.length==3) { //uzunluk kontrol
       int cx = Integer.parseInt(arguments[0]);
@@ -53,7 +52,6 @@ class Walker implements Serializable {
   public void travel(int cx,int cy,int cz) {
     //isinlanma burda yapilicak.
   }
-*/
   /**
    * Attempts to move the hero in a given direction.
    *
