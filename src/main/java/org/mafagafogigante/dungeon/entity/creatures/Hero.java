@@ -81,7 +81,7 @@ public class Hero extends Creature {
   private final AchievementTracker achievementTracker;
   private final Statistics statistics;
   private final Date dateOfBirth;
-
+  private int totalCapacity;
   Hero(CreaturePreset preset, Statistics statistics, Date dateOfBirth) {
     super(preset);
     this.statistics = statistics;
@@ -711,31 +711,35 @@ public class Hero extends Creature {
     }
   }
 
-  private void equipWeapon(Item weapon) {
+  private void equipWeapon(Item weapon) {  
     if (hasWeapon()) {
       if (getWeapon() == weapon) {
         Writer.write(getName().getSingular() + " is already equipping " + weapon.getName().getSingular() + ".");
         return;
+      }
+    } 
+      Engine.rollDateAndRefresh(SECONDS_TO_EQUIP);	
+      if (getInventory().hasItem(weapon)) {
+        if(weapon.getQualifiedName().contains("Bag")) {
+          setTotalCapacity(weapon.getWeaponComponent().getDamage());
+        }
+        else {	
+          setWeapon(weapon);
+        }
+        DungeonString string = new DungeonString();
+        string.append(getName() + " equipped " + weapon.getQualifiedName() + ".");
+        if(weapon.getQualifiedName().contains("Bag")) {
+          string.append(" " + "Your total carriage capacity is now " + getTotalCapacity() + ".");
+        }
+        else {
+          string.append(" " + "Your total damage is now " + getTotalDamage() + ".");
+        }
+        Writer.write(string);
       } else {
-        unequipWeapon();
+        HeroUtils.writeNoLongerInInventoryMessage(weapon);
       }
-    }
-    Engine.rollDateAndRefresh(SECONDS_TO_EQUIP);
-    if (getInventory().hasItem(weapon)) {
-      setWeapon(weapon);
-      DungeonString string = new DungeonString();
-      string.append(getName() + " equipped " + weapon.getQualifiedName() + ".");
-	    if(weapon.getQualifiedName().contains("Bag")) {
-        string.append(" " + "Your total carriage capacity is now " + getTotalDamage() + ".");
-      }
-      else {
-        string.append(" " + "Your total damage is now " + getTotalDamage() + ".");
-      }
-      Writer.write(string);
-    } else {
-      HeroUtils.writeNoLongerInInventoryMessage(weapon);
-    }
   }
+
 
   /**
    * Unequips the currently equipped weapon.
@@ -928,5 +932,13 @@ public class Hero extends Creature {
     }
     Writer.write(string);
   }
-
+  
+  public int getTotalCapacity() {
+    return totalCapacity;
+  }
+  
+  public void setTotalCapacity(int i) {
+    totalCapacity = i;
+    setInventory(i);  //Calls the Creature class' setInventory() method.
+  }  		
 }

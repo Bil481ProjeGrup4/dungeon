@@ -40,7 +40,7 @@ public final class Loader {
   private static final String DEFAULT_SAVE_NAME = "default" + SAVE_EXTENSION;
   private static final String SAVE_CONFIRM = "Do you want to save the game?";
   private static final String LOAD_CONFIRM = "Do you want to load the game?";
-
+  
   private Loader() { // Ensure that this class cannot be instantiated.
     throw new AssertionError();
   }
@@ -150,7 +150,7 @@ public final class Loader {
    * Saves the specified GameState to the default save file.
    */
   public static void saveGame(GameState gameState) {
-    saveGame(gameState, null);
+    saveGame(gameState, null, false);
   }
 
   /**
@@ -158,13 +158,18 @@ public final class Loader {
    *
    * <p>Only asks for confirmation if there already is a save file with the name.
    */
-  public static void saveGame(GameState gameState, String[] arguments) {
+  public static void saveGame(GameState gameState, String[] arguments, boolean cameFromAddedMethods) {
     String saveName = DEFAULT_SAVE_NAME;
     if (arguments != null && arguments.length != 0) {
       saveName = arguments[0];
     }
-    if (saveFileDoesNotExist(saveName) || confirmOperation(SAVE_CONFIRM)) {
+    if(cameFromAddedMethods) {
       saveFile(gameState, saveName);
+    }
+    else {
+      if (saveFileDoesNotExist(saveName) || confirmOperation(SAVE_CONFIRM)) {
+        saveFile(gameState, saveName);
+      }
     }
   }
 

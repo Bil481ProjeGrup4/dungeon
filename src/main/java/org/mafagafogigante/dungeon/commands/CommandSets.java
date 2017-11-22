@@ -86,6 +86,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("cast", "Casts a spell.") {
       @Override
       public void execute(@NotNull String[] arguments) {
+        Loader.saveGame(Game.getGameState(),arguments, true);
         Game.getGameState().getHero().getSpellcaster().parseCast(arguments);
       }
     });
@@ -165,6 +166,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("kill", "Attacks the target chosen by the player.") {
       @Override
       public void execute(@NotNull String[] arguments) {
+        Loader.saveGame(Game.getGameState(),arguments, true);
         Game.getGameState().getHero().attackTarget(arguments);
       }
     });
@@ -218,13 +220,14 @@ final class CommandSets {
     commandSet.addCommand(new Command("rest", "Rests until healing about three fifths of the character's health.") {
       @Override
       public void execute(@NotNull String[] arguments) {
+        Loader.saveGame(Game.getGameState(),arguments, true);
         Game.getGameState().getHero().rest();
       }
     });
     commandSet.addCommand(new Command("save", "Saves the game.") {
       @Override
       public void execute(@NotNull String[] arguments) {
-        Loader.saveGame(Game.getGameState(), arguments);
+        Loader.saveGame(Game.getGameState(), arguments, false);
       }
     });
     commandSet.addCommand(new Command("saves", "Displays a table with all the save files.") {
@@ -236,6 +239,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("sleep", "Sleeps until the sun rises.") {
       @Override
       public void execute(@NotNull String[] arguments) {
+        Loader.saveGame(Game.getGameState(),arguments, true);
         Game.getGameState().getHero().sleep();
       }
     });
@@ -254,6 +258,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("time", "Displays what the character knows about the current time.") {
       @Override
       public void execute(@NotNull String[] arguments) {
+        Loader.saveGame(Game.getGameState(),arguments, true);
         Game.getGameState().getHero().readTime();
       }
     });
@@ -376,6 +381,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("kills", "Writes statistics about your killings.") {
       @Override
       public void execute(@NotNull String[] arguments) {
+		    Loader.saveGame(Game.getGameState(),arguments, true);
         CounterMap<CauseOfDeath> map =
             Game.getGameState().getStatistics().getBattleStatistics().getKillsByCauseOfDeath();
         if (map.isNotEmpty()) {

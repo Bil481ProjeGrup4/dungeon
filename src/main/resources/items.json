@@ -41,6 +41,46 @@
       "damage": 15,
       "hitRate": "80.00%",
       "integrityDecrementOnHit": 1
+    }, 
+	{
+      "id": "BLUE_BAG",
+      "type": "Weapon",
+      "name": {
+        "singular": "Blue Bag"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON"
+      ],
+      "integrity": {
+        "current": 90,
+        "maximum": 90
+      },
+      "weight": 0.6,
+      "visibility": "65.00%",
+      "damage": 20,
+      "hitRate": "80.00%",
+      "integrityDecrementOnHit": 1
+    },
+	{
+      "id": "LARGE_BAG",
+      "type": "Weapon",
+      "name": {
+        "singular": "Large Bag"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON"
+      ],
+      "integrity": {
+        "current": 90,
+        "maximum": 90
+      },
+      "weight": 1.0,
+      "visibility": "65.00%",
+      "damage": 25,
+      "hitRate": "80.00%",
+      "integrityDecrementOnHit": 1
     },  
     {
       "id": "APPLE",
@@ -1200,6 +1240,30 @@
       "integrityDecrementOnHit": 4,
       "text": "The Heal spell is very useful as it allows the character to restore health very quickly.",
       "spell": "HEAL"
+    },
+    {
+      "id": "TOME_OF_IMMORTAL",
+      "type": "Book",
+      "name": {
+        "singular": "Tome of Immortal",
+        "plural": "Tomes of Immortal"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON",
+        "BOOK"
+      ],
+      "integrity": {
+        "current": 20,
+        "maximum": 20
+      },
+      "weight": 1.0,
+      "visibility": "100.00%",
+      "damage": 8,
+      "hitRate": "10.00%",
+      "integrityDecrementOnHit": 4,
+      "text": "The Immortal spell allows you to be immortal for a while",
+      "spell": "IMMORTAL"
     },
     {
       "id": "TOME_OF_FINGER_OF_DEATH",

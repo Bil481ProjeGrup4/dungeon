@@ -35,6 +35,12 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
   public Weight getWeightLimit() {
     return weightLimit;
   }
+  
+  //written a method in order to set weight limit. So when we get a Bag we can increase our inventory limit.
+  public void setWeightLimit(int weight) {
+    this.weightLimit = new Weight(weight);
+  }
+		
   /**
   * Retrieves the sum of the weights of the individual items on this inventory.
   */
@@ -45,12 +51,7 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
     }
     return sum;
   }
-  
-  //written a method in order to set weight limit. So when we get a backpack we can increase our inventory limit.
-  public void setWeightLimit(int weight) {
-    this.weightLimit = new Weight(weight);
-  }
-	
+
   /**
    * Attempts to add an Item to this Inventory. As a precondition, simulateItemAddition should return SUCCESSFUL.
    *
@@ -74,12 +75,7 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
    * @return a SimulationResult value
    */
   public SimulationResult simulateItemAddition(Item item) {
-/*    if (item.hasTag(Item.Tag.BAG)) {
-      setWeightLimit(item);
-      return SimulationResult.SUCCESSFUL;
-    }
-    else{ 
-*/      if (hasItem(item)) { // Check that the new item is not already in the inventory.
+      if (hasItem(item)) { // Check that the new item is not already in the inventory.
         DungeonLogger.warning("Tried to add an item to a CreatureInventory that already has it.");
         return SimulationResult.ALREADY_IN_THE_INVENTORY;
       }
@@ -90,7 +86,6 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
       } else {
         return SimulationResult.SUCCESSFUL;
       }
-//    }
   }
 
   private boolean isFull() {
@@ -108,7 +103,7 @@ public class CreatureInventory extends BaseInventory implements LimitedInventory
    */
   public void removeItem(Item item) {
     if (owner.getWeapon() == item) {
-      owner.unsetWeapon();
+      		owner.unsetWeapon();
     }
     items.remove(item);
     item.setInventory(null);

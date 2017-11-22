@@ -12,7 +12,6 @@ import org.mafagafogigante.dungeon.io.Version;
 import org.mafagafogigante.dungeon.logging.DungeonLogger;
 import org.mafagafogigante.dungeon.stats.CauseOfDeath;
 import org.mafagafogigante.dungeon.util.Percentage;
-
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -59,6 +58,10 @@ public class Creature extends Entity {
     dropper = new Dropper(this, preset.getDropList());
   }
 
+  public void setInventory(int i) {   //sets the new limit using CreatureInventory's setWeightLimit method.
+    inventory.setWeightLimit(i);
+  }
+	
   public boolean hasTag(Tag tag) {
     return tagSet.hasTag(tag);
   }

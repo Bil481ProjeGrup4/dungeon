@@ -72,6 +72,14 @@
           "id": "TOME_OF_UNVEIL",
           "probability": 0.15
         },
+		{
+          "id": "RED_BAG",
+          "probability": 1.0
+        },
+		{
+          "id": "LARGE_BAG",
+          "probability": 0.2
+        },
         {
           "id": "DAGGER",
           "probability": 0.2
@@ -186,6 +194,10 @@
           "id": "SWORD",
           "probability": 0.5
         },
+		{
+          "id": "BLUE_BAG",
+          "probability": 1.0
+        },    
         {
           "id": "HISTORY_OF_THE_THIRD_ERA",
           "probability": 0.05
