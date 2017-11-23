@@ -82,6 +82,7 @@ public class Hero extends Creature {
   private final Statistics statistics;
   private final Date dateOfBirth;
   private int totalCapacity;
+  private boolean immortalNow = false;
   Hero(CreaturePreset preset, Statistics statistics, Date dateOfBirth) {
     super(preset);
     this.statistics = statistics;
@@ -105,7 +106,12 @@ public class Hero extends Creature {
   public AchievementTracker getAchievementTracker() {
     return achievementTracker;
   }
-
+  public void setImmortalNow(boolean b) {
+    immortalNow=b;
+  }
+  public boolean isImmortal() {
+    return immortalNow; 
+  }
   /**
    * Increments the Hero's health by a certain amount, without exceeding its maximum health. If at the end the Hero is
    * completely healed, a messaging about this is written.
