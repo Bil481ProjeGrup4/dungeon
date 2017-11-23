@@ -32,10 +32,13 @@ final class AttackAlgorithmWriter {
     if (defender instanceof Hero ) {
       if (((Hero)defender).isImmortal()) {
            string.append(" inflicted ");
-           string.append(String.valueOf(0)); }}
-      else { 
-           string.append(" inflicted ");
-           string.append(String.valueOf(hitDamage)); }
+           string.append(String.valueOf(0)); }
+      else {
+	         string.append(" inflicted ");
+           string.append(String.valueOf(hitDamage)); }}
+    else { 
+      string.append(" inflicted ");
+      string.append(String.valueOf(hitDamage)); }
     string.append(" damage points to ");
     string.append(defender.getName().getSingular());
     if (criticalHit) {
