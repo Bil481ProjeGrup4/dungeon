@@ -38,6 +38,7 @@
         ["CHERRY", 0.8],
         ["CHERRY", 0.8],
         ["WATERMELON", 0.2],
+		["BLUE_BAG",0.9],  
         ["TOME_OF_PERCEIVE", 0.1],
         ["TOME_OF_REPAIR", 0.05]
       ],
@@ -63,6 +64,7 @@
       "drops": [
         ["APPLE", 0.8],
         ["APPLE", 0.4],
+		["LARGE_BAG", 0.9],  
         ["COW_BEEF", 0.25],
         ["ORC_SWORD", 0.6],
         ["STRAWBERRY", 0.6],
@@ -87,6 +89,7 @@
       "drops": [
         ["POTATO", 1.0],
         ["POTATO", 0.8],
+		["RED_BAG", 0.9],  
         ["POTATO", 0.6],
         ["POTATO", 0.4],
         ["STRAWBERRY", 0.6],

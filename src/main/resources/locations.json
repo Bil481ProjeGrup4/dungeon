@@ -119,6 +119,10 @@
           "id": "STICK",
           "probability": 0.3
         },
+		{
+          "id": "BLUE_BAG",
+          "probability": 1.0
+        },   
         {
           "id": "TOME_OF_FINGER_OF_DEATH",
           "probability": 0.1
@@ -850,6 +854,10 @@
           "id": "LONGSWORD",
           "probability": 0.15
         },
+		{
+          "id": "LARGE_BAG",
+          "probability": 0.6
+        },  
         {
           "id": "TOME_OF_PERCEIVE",
           "probability": 0.1
@@ -984,7 +992,11 @@
         {
           "id": "SPEAR",
           "probability": 0.3
-        }
+        },
+		{
+          "id": "LARGE_BAG",
+          "probability": 0.4
+        }  
       ]
     },
     {
@@ -1099,7 +1111,11 @@
         {
           "id": "CLUB",
           "probability": 0.4
-        }
+        },
+		{
+          "id": "LARGE_BAG",
+          "probability": 0.1
+        }  
       ]
     },
     {
