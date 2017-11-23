@@ -7,6 +7,18 @@ import org.junit.Test;
 public class CommandSetTest {
 
   @Test
+  public void shouldBeAbleToFindTravel() throws Exception {
+    CommandSet commandSet = CommandSet.emptyCommandSet();
+    Command command = new Command("travel", "Makes the character move into the specified coordinates.") {
+      @Override
+      public void execute(@NotNull String[] arguments) {
+      }
+    };
+    commandSet.addCommand(command);
+    Assert.assertEquals(command, commandSet.getCommand("travel"));
+  }
+  
+  @Test
   public void shouldBeAbleToRetrieveAnAddedCommand() throws Exception {
     CommandSet commandSet = CommandSet.emptyCommandSet();
     Command command = new Command("go", "Go to the specified location.") {

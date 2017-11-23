@@ -18,17 +18,18 @@ public class Point implements Serializable {
    * Constructs a Point from three integers representing x, y, and z, respectively.
    */
   public Point(int x, int y, int z) {
-    //if(validate) {
-    this.x = x;
-    this.y = y;
-    this.z = z;
-    //}
+      this.x = x;
+      this.y = y;
+      this.z = z;
   }
-/*
+  
   public boolean validate(int x,int y,int z) {
+    if(z!=0)//you can not teleport inside a dungeon
+      return false;
+    return true;
     //x y z degerlerinin valid oldugu kontrol edilmeli
   }
-*/
+
   /**
    * Constructs a Point from another Point and a Direction that is equivalent to the specified Point moved towards the
    * provided Direction.
