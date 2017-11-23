@@ -29,8 +29,13 @@ final class AttackAlgorithmWriter {
     DungeonString string = new DungeonString();
     string.setColor(attacker.getId().equals(Game.getGameState().getHero().getId()) ? Color.GREEN : Color.RED);
     string.append(attacker.getName().getSingular());
-    string.append(" inflicted ");
-    string.append(String.valueOf(hitDamage));
+    if (defender instanceof Hero ) {
+      if (((Hero)defender).isImmortal()) {
+           string.append(" inflicted ");
+           string.append(String.valueOf(0)); }}
+      else { 
+           string.append(" inflicted ");
+           string.append(String.valueOf(hitDamage)); }
     string.append(" damage points to ");
     string.append(defender.getName().getSingular());
     if (criticalHit) {
