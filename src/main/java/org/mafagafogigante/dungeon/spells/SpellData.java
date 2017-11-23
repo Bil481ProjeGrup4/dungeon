@@ -64,6 +64,14 @@ public final class SpellData {
         }
       }
     });
+    putSpell(new Spell("IMMORTAL", "Immortal") {
+      static final int SECONDS_TO_CAST_IMMORTAL = 10;
+
+      @Override
+      public void operate(Hero hero, String[] targetMatcher) { 
+	      hero.setImmortalNow(true);
+        Writer.write("You're now immortal."); } 
+    });
     putSpell(new Spell("REPAIR", "Repair") {
       private static final int REPAIR_VALUE = 50;
       private static final int SECONDS_TO_CAST_REPAIR = 10;
