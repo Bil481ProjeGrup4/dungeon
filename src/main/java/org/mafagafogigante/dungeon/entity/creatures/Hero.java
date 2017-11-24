@@ -83,6 +83,7 @@ public class Hero extends Creature {
   private final Date dateOfBirth;
   private int totalCapacity;
   private boolean immortalNow = false;
+  private long sinceIN = -1;
   Hero(CreaturePreset preset, Statistics statistics, Date dateOfBirth) {
     super(preset);
     this.statistics = statistics;
@@ -94,7 +95,12 @@ public class Hero extends Creature {
   private static int nextRandomTimeChunk() {
     return Random.nextInteger(15 * 60 + 1);
   }
-
+  public void setSinceIN(long i) {
+    sinceIN=i; 
+  }
+  public long getSinceIN() {
+    return sinceIN; 
+  }
   public Observer getObserver() {
     return observer;
   }
