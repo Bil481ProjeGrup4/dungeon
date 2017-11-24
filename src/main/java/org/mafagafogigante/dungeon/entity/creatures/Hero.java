@@ -371,6 +371,15 @@ public class Hero extends Creature {
     if (getInventory().simulateItemAddition(item) == SimulationResult.SUCCESSFUL) {
       getInventory().addItem(item);
       Writer.write(String.format("Added %s to the inventory.", item.getQualifiedName()));
+      if (item.getQualifiedName().equals("White True Sight Stone")) {
+        doesHeroHaveWhiteTrueSightStone = true;
+      }
+      if (item.getQualifiedName().equals("Red True Sight Stone")) {
+        doesHeroHaveRedTrueSightStone = true;
+      }
+      if (item.getQualifiedName().equals("Blue True Sight Stone")) {
+        doesHeroHaveBlueTrueSightStone = true;
+      }
     } else {
       throw new IllegalStateException("simulateItemAddition did not return SUCCESSFUL.");
     }
@@ -422,6 +431,15 @@ public class Hero extends Creature {
     for (Item item : selectedItems) {
       if (item == getWeapon()) {
         unsetWeapon(); // Just unset the weapon, it does not need to be moved to the inventory before being dropped.
+      }
+      if (item.getQualifiedName().equals("White True Sight Stone")) {
+        doesHeroHaveWhiteTrueSightStone = false;
+      }
+      if (item.getQualifiedName().equals("Red True Sight Stone")) {
+        doesHeroHaveRedTrueSightStone = false;
+      }
+      if (item.getQualifiedName().equals("Blue True Sight Stone")) {
+        doesHeroHaveBlueTrueSightStone = false;
       }
       // Take the time to drop the item.
       Engine.rollDateAndRefresh(SECONDS_TO_DROP_AN_ITEM);
