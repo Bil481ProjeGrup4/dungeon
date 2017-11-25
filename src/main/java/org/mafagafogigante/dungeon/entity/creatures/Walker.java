@@ -50,8 +50,8 @@ class Walker implements Serializable {
     else if(arguments.length==1) {
       if(arguments[0].equals("-r")) {
         Random rand = new Random();
-        int cx = rand.nextInt(10000)-10000;
-        int cy = rand.nextInt(10000)-10000;
+        int cx = rand.nextInt(20000)-10000;
+        int cy = rand.nextInt(20000)-10000;
         int cz = 0;
         travel(cx,cy,cz);
       }

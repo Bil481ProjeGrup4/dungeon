@@ -867,14 +867,14 @@ public class Hero extends Creature {
    * @param arguments an array of string arguments
    */
   public void walk(String[] arguments) {
-    if(arguments.length==4) 
-      if(arguments[0].equals("-h")) 
-        addHealth(10);
     walker.parseHeroWalk(arguments);
   }
   
   public void travel(String[] arguments) 
   {
+    if(arguments.length==4) 
+      if(arguments[0].equals("-h")) 
+        addHealth(10);
     walker.parseTravel(arguments); 
     //walker classı icine yazıcagim teleport metodunu cagirir.
   }
