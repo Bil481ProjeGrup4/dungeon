@@ -33,12 +33,15 @@
         "DAGGER"
       ],
       "drops": [
-        ["APPLE", 0.6],
+	["WHITE_TRUE_SIGHT_STONE", 0.9],
+        ["RED_TRUE_SIGHT_STONE", 0.9],
+        ["BLUE_TRUE_SIGHT_STONE", 0.9],
+	["APPLE", 0.6],
         ["BANANA", 0.4],
         ["CHERRY", 0.8],
         ["CHERRY", 0.8],
         ["WATERMELON", 0.2],
-		["BLUE_BAG",0.9],  
+	["BLUE_BAG",0.9],  
         ["TOME_OF_PERCEIVE", 0.1],
         ["TOME_OF_REPAIR", 0.05]
       ],
@@ -62,9 +65,12 @@
         "DAGGER"
       ],
       "drops": [
+        ["WHITE_TRUE_SIGHT_STONE", 0.9],
+        ["RED_TRUE_SIGHT_STONE", 0.9],
+        ["BLUE_TRUE_SIGHT_STONE", 0.9],
         ["APPLE", 0.8],
         ["APPLE", 0.4],
-		["LARGE_BAG", 0.9],  
+	["LARGE_BAG", 0.9],  
         ["COW_BEEF", 0.25],
         ["ORC_SWORD", 0.6],
         ["STRAWBERRY", 0.6],
@@ -87,9 +93,12 @@
         "CORPSE"
       ],
       "drops": [
+	["WHITE_TRUE_SIGHT_STONE", 0.9],
+        ["RED_TRUE_SIGHT_STONE", 0.9],
+        ["BLUE_TRUE_SIGHT_STONE", 0.9],
         ["POTATO", 1.0],
         ["POTATO", 0.8],
-		["RED_BAG", 0.9],  
+	["RED_BAG", 0.9],  
         ["POTATO", 0.6],
         ["POTATO", 0.4],
         ["STRAWBERRY", 0.6],
@@ -126,6 +135,9 @@
         "CORPSE"
       ],
       "drops": [
+        ["WHITE_TRUE_SIGHT_STONE", 0.9],
+        ["RED_TRUE_SIGHT_STONE", 0.9],
+        ["BLUE_TRUE_SIGHT_STONE", 0.9],
         ["RABBIT_BEEF", 1.0]
       ],
       "visibility": "70%",
@@ -408,6 +420,9 @@
         "ORC_SWORD"
       ],
       "drops": [
+        ["WHITE_TRUE_SIGHT_STONE", 0.9],
+        ["RED_TRUE_SIGHT_STONE", 0.9],
+        ["BLUE_TRUE_SIGHT_STONE", 0.9],
         ["AXE", 0.1],
         ["BONE", 0.5],
         ["SKULL", 1.0],

@@ -37,6 +37,14 @@ public class Creature extends Entity {
   private Item weapon;
   private Location location;
 
+  /*
+   *I added one checkpoint for each of my stones.
+   */
+
+  public boolean doesHeroHaveWhiteTrueSightStone = false;
+  public boolean doesHeroHaveRedTrueSightStone = false;
+  public boolean doesHeroHaveBlueTrueSightStone = false;
+
   /**
    * What caused the death of this creature. If getHealth().isAlive() evaluates to true, this should be null.
    */

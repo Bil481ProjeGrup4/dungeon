@@ -12,6 +12,7 @@ import org.mafagafogigante.dungeon.game.Id;
 import org.mafagafogigante.dungeon.game.Location;
 import org.mafagafogigante.dungeon.game.Point;
 import org.mafagafogigante.dungeon.game.Random;
+import org.mafagafogigante.dungeon.game.Game;
 import org.mafagafogigante.dungeon.io.Writer;
 import org.mafagafogigante.dungeon.stats.CauseOfDeath;
 import org.mafagafogigante.dungeon.stats.TypeOfCauseOfDeath;
@@ -63,6 +64,26 @@ public final class SpellData {
           Writer.write(target.getName() + " is completely healed.");
         }
       }
+    });
+    putSpell(new Spell("IMMORTAL", "Immortal") {
+      private static final int SECONDS_TO_CAST_IMMORTAL = 10;
+
+      @Override
+      public void operate(Hero hero, String[] targetMatcher) { 
+	   Engine.rollDateAndRefresh(SECONDS_TO_CAST_IMMORTAL);
+           if(hero.getSinceIN()==-1) {
+	      hero.setImmortalNow(true);
+              Writer.write("You're now immortal.");
+              hero.setSinceIN((Game.getGameState().getWorld().getWorldDate().getTime())); }
+           else {
+              if ((((Game.getGameState().getWorld().getWorldDate().getTime())/(1000*60))-(hero.getSinceIN()/(1000*60)))<5) {
+			hero.setImmortalNow(false); hero.setSinceIN(-1); }
+              else { 
+             	 if(((Game.getGameState().getWorld().getWorldDate().getTime())-(hero.getSinceIN()))<30000) {
+				Writer.write("You're already immortal.."); hero.setImmortalNow(true); }
+		 else hero.setImmortalNow(false);
+		 Writer.write("You are too tired to use this spell"); }
+	      }}
     });
     putSpell(new Spell("REPAIR", "Repair") {
       private static final int REPAIR_VALUE = 50;

@@ -23,6 +23,13 @@ public enum Direction {
     this.abbreviation = abbreviation;
     this.offset = offset;
   }
+  
+  /*
+   *I need abbreviation to control map vision but it is private so i wrote a get method for it.
+   */
+  public String getAbbreviation() {
+    return abbreviation;
+  }
 
   /**
    * Returns the Direction that a given abbreviation corresponds to.

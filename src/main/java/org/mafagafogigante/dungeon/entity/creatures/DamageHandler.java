@@ -9,9 +9,18 @@ class DamageHandler {
   }
 
   static void inflictDamage(Creature attacker, Creature defender, int damage) {
-    defender.getHealth().decrementBy(damage);
-    attacker.getBattleLog().incrementInflicted(damage);
-    defender.getBattleLog().incrementTaken(damage);
+    if ((defender instanceof Hero)) {
+      if (((Hero)defender).isImmortal()) { 
+        defender.getHealth().decrementBy(0);
+        attacker.getBattleLog().incrementInflicted(0);
+        defender.getBattleLog().incrementTaken(0); }
+      else {
+        defender.getHealth().decrementBy(damage);
+        attacker.getBattleLog().incrementInflicted(damage);
+        defender.getBattleLog().incrementTaken(damage); }}
+    else {
+        defender.getHealth().decrementBy(damage);
+        attacker.getBattleLog().incrementInflicted(damage);
+        defender.getBattleLog().incrementTaken(damage); }
   }
-
 }

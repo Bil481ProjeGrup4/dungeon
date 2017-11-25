@@ -82,6 +82,8 @@ public class Hero extends Creature {
   private final Statistics statistics;
   private final Date dateOfBirth;
   private int totalCapacity;
+  private boolean immortalNow = false;
+  private long sinceIN = -1;
   Hero(CreaturePreset preset, Statistics statistics, Date dateOfBirth) {
     super(preset);
     this.statistics = statistics;
@@ -93,7 +95,12 @@ public class Hero extends Creature {
   private static int nextRandomTimeChunk() {
     return Random.nextInteger(15 * 60 + 1);
   }
-
+  public void setSinceIN(long i) {
+    sinceIN=i; 
+  }
+  public long getSinceIN() {
+    return sinceIN; 
+  }
   public Observer getObserver() {
     return observer;
   }
@@ -105,7 +112,12 @@ public class Hero extends Creature {
   public AchievementTracker getAchievementTracker() {
     return achievementTracker;
   }
-
+  public void setImmortalNow(boolean b) {
+    immortalNow=b;
+  }
+  public boolean isImmortal() {
+    return immortalNow; 
+  }
   /**
    * Increments the Hero's health by a certain amount, without exceeding its maximum health. If at the end the Hero is
    * completely healed, a messaging about this is written.
@@ -359,6 +371,15 @@ public class Hero extends Creature {
     if (getInventory().simulateItemAddition(item) == SimulationResult.SUCCESSFUL) {
       getInventory().addItem(item);
       Writer.write(String.format("Added %s to the inventory.", item.getQualifiedName()));
+      if (item.getQualifiedName().equals("White True Sight Stone")) {
+        doesHeroHaveWhiteTrueSightStone = true;
+      }
+      if (item.getQualifiedName().equals("Red True Sight Stone")) {
+        doesHeroHaveRedTrueSightStone = true;
+      }
+      if (item.getQualifiedName().equals("Blue True Sight Stone")) {
+        doesHeroHaveBlueTrueSightStone = true;
+      }
     } else {
       throw new IllegalStateException("simulateItemAddition did not return SUCCESSFUL.");
     }
@@ -410,6 +431,15 @@ public class Hero extends Creature {
     for (Item item : selectedItems) {
       if (item == getWeapon()) {
         unsetWeapon(); // Just unset the weapon, it does not need to be moved to the inventory before being dropped.
+      }
+      if (item.getQualifiedName().equals("White True Sight Stone")) {
+        doesHeroHaveWhiteTrueSightStone = false;
+      }
+      if (item.getQualifiedName().equals("Red True Sight Stone")) {
+        doesHeroHaveRedTrueSightStone = false;
+      }
+      if (item.getQualifiedName().equals("Blue True Sight Stone")) {
+        doesHeroHaveBlueTrueSightStone = false;
       }
       // Take the time to drop the item.
       Engine.rollDateAndRefresh(SECONDS_TO_DROP_AN_ITEM);

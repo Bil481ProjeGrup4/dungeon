@@ -283,6 +283,10 @@
           "probability": 0.05
         },
         {
+          "id": "TOME_OF_IMMORTAL",
+          "probability": 1.0
+        },
+        {
           "id": "TOME_OF_DISPLACE",
           "probability": 0.05
         }
@@ -687,6 +691,10 @@
           "probability": 0.15
         },
         {
+          "id": "TOME_OF_IMMORTAL",
+          "probability": 1.0
+        },
+        {
           "id": "TOME_OF_HEAL",
           "probability": 0.1
         }
@@ -861,6 +869,10 @@
         {
           "id": "TOME_OF_PERCEIVE",
           "probability": 0.1
+        },
+        {
+          "id": "TOME_OF_IMMORTAL",
+          "probability": 1.0
         },
         {
           "id": "WRIST_WATCH",
@@ -1183,6 +1195,10 @@
         {
           "id": "STONE",
           "probability": 0.3
+        },
+        {
+          "id": "TOME_OF_IMMORTAL",
+          "probability": 1.0
         },
         {
           "id": "TOME_OF_REPAIR",

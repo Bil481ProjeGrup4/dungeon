@@ -1615,6 +1615,66 @@
       "damage": 1,
       "hitRate": "40.00%",
       "integrityDecrementOnHit": 2
+    },
+    {
+      "id": "WHITE_TRUE_SIGHT_STONE",
+      "type": "Weapon",
+      "name": {
+        "singular": "White True Sight Stone"
+      },
+      "rarity": "UNIQUE",
+      "tags": [
+        "WEAPON"
+      ],
+      "integrity": {
+        "current": 1,
+        "maximum": 1
+      },
+      "weight": 0.1,
+      "visibility": "90.00%",
+      "damage": 1,
+      "hitRate": "70.00%",
+      "integrityDecrementOnHit": 0
+    },
+    {
+      "id": "RED_TRUE_SIGHT_STONE",
+      "type": "Weapon",
+      "name": {
+        "singular": "Red True Sight Stone"
+      },
+      "rarity": "UNCOMMON",
+      "tags": [
+        "WEAPON"
+      ],
+      "integrity": {
+        "current": 1,
+        "maximum": 1
+      },
+      "weight": 0.1,
+      "visibility": "60.00%",
+      "damage": 1,
+      "hitRate": "70.00%",
+      "integrityDecrementOnHit": 0
+    },
+    {
+      "id": "BLUE_TRUE_SIGHT_STONE",
+      "type": "Weapon",
+      "name": {
+        "singular": "Blue True Sight Stone"
+      },
+      "rarity": "COMMON",
+      "tags": [
+        "WEAPON"
+      ],
+      "integrity": {
+        "current": 1,
+        "maximum": 1
+      },
+      "weight": 0.1,
+      "visibility": "60.00%",
+      "damage": 1,
+      "hitRate": "70.00%",
+      "integrityDecrementOnHit": 0
     }
   ]
 }
