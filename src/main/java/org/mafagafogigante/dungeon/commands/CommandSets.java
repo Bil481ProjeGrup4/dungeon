@@ -86,7 +86,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("cast", "Casts a spell.") {
       @Override
       public void execute(@NotNull String[] arguments) {
-        Loader.saveGame(Game.getGameState(),arguments, true);
+        Loader.saveGame(Game.getGameState(),arguments, true);	//automatic save mechanism
         Game.getGameState().getHero().getSpellcaster().parseCast(arguments);
       }
     });
@@ -166,7 +166,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("kill", "Attacks the target chosen by the player.") {
       @Override
       public void execute(@NotNull String[] arguments) {
-        Loader.saveGame(Game.getGameState(),arguments, true);
+        Loader.saveGame(Game.getGameState(),arguments, true);	//automatic save mechanism
         Game.getGameState().getHero().attackTarget(arguments);
       }
     });
@@ -220,7 +220,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("rest", "Rests until healing about three fifths of the character's health.") {
       @Override
       public void execute(@NotNull String[] arguments) {
-        Loader.saveGame(Game.getGameState(),arguments, true);
+        Loader.saveGame(Game.getGameState(),arguments, true);	//automatic save mechanism
         Game.getGameState().getHero().rest();
       }
     });
@@ -239,7 +239,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("sleep", "Sleeps until the sun rises.") {
       @Override
       public void execute(@NotNull String[] arguments) {
-        Loader.saveGame(Game.getGameState(),arguments, true);
+        Loader.saveGame(Game.getGameState(),arguments, true);	//automatic save mechanism
         Game.getGameState().getHero().sleep();
       }
     });
@@ -258,7 +258,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("time", "Displays what the character knows about the current time.") {
       @Override
       public void execute(@NotNull String[] arguments) {
-        Loader.saveGame(Game.getGameState(),arguments, true);
+        Loader.saveGame(Game.getGameState(),arguments, true);	//automatic save mechanism
         Game.getGameState().getHero().readTime();
       }
     });
@@ -381,7 +381,7 @@ final class CommandSets {
     commandSet.addCommand(new Command("kills", "Writes statistics about your killings.") {
       @Override
       public void execute(@NotNull String[] arguments) {
-		    Loader.saveGame(Game.getGameState(),arguments, true);
+		    Loader.saveGame(Game.getGameState(),arguments, true);	//automatic save mechanism
         CounterMap<CauseOfDeath> map =
             Game.getGameState().getStatistics().getBattleStatistics().getKillsByCauseOfDeath();
         if (map.isNotEmpty()) {

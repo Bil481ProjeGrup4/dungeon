@@ -76,10 +76,6 @@ public final class Item extends Entity {
     }
   }
 
-/*	public Weight getWeightIncrease() {
-    return weightLimit;
-  }
-*/  
   public Rarity getRarity() {
     return rarity;
   }
