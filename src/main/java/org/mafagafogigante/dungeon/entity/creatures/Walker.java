@@ -13,6 +13,7 @@ import org.mafagafogigante.dungeon.stats.ExplorationStatistics;
 
 import java.awt.Color;
 import java.io.Serializable;
+import java.util.*;
 
 /**
  * A Walker that is capable of moving between Locations. The Hero needs a Walker component in order to move around.
@@ -46,8 +47,19 @@ class Walker implements Serializable {
       int cz = Integer.parseInt(arguments[2]);
       travel(cx,cy,cz);
     }
+    else if(arguments.length==1) {
+      if(arguments[0].equals("-r")) {
+        Random rand = new Random();
+        int cx = rand.nextInt(10000)-10000;
+        int cy = rand.nextInt(10000)-10000;
+        int cz = 0;
+        travel(cx,cy,cz);
+      }
+      else
+        Writer.write(new DungeonString("Invalid input",Color.BLUE));
+    }
     else {
-      Writer.write("Invalid input.");
+      Writer.write(new DungeonString("Invalid input.",Color.ORANGE));
     }
   }
   
