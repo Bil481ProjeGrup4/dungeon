@@ -58,6 +58,18 @@ class Walker implements Serializable {
       else
         Writer.write(new DungeonString("Invalid input",Color.BLUE));
     }
+    else if(arguments.length==4)
+    {
+      if(arguments[0].equals("-h"))
+      {
+        int cx = Integer.parseInt(arguments[1]);
+        int cy = Integer.parseInt(arguments[2]);
+        int cz = Integer.parseInt(arguments[3]);
+        travel(cx,cy,cz);
+      }
+      else
+        Writer.write(new DungeonString("Invalid input",Color.GREEN));
+    }
     else {
       Writer.write(new DungeonString("Invalid input.",Color.ORANGE));
     }

@@ -867,18 +867,10 @@ public class Hero extends Creature {
    * @param arguments an array of string arguments
    */
   public void walk(String[] arguments) {
-    if(arguments.length==4) {
-      if(arguments[0].equals("-h")) {
+    if(arguments.length==4) 
+      if(arguments[0].equals("-h")) 
         addHealth(10);
-      }
-      String[] a = new String[3];
-      a[0]=arguments[1];
-      a[1]=arguments[2];
-      a[2]=arguments[3];
-      walker.parseHeroWalk(a);
-    }
-    else
-      walker.parseHeroWalk(arguments);
+    walker.parseHeroWalk(arguments);
   }
   
   public void travel(String[] arguments) 
