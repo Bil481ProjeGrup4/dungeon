@@ -158,15 +158,15 @@ public final class Loader {
    *
    * <p>Only asks for confirmation if there already is a save file with the name.
    */
-  public static void saveGame(GameState gameState, String[] arguments, boolean cameFromAddedMethods) {
-    String saveName = DEFAULT_SAVE_NAME;
+  public static void saveGame(GameState gameState, String[] arguments, boolean cameFromAddedMethods) {		
+    String saveName = DEFAULT_SAVE_NAME;																	
     if (arguments != null && arguments.length != 0) {
       saveName = arguments[0];
     }
-    if(cameFromAddedMethods) {
-      saveFile(gameState, saveName);
+    if(cameFromAddedMethods) {			//if the last argument(boolean). Came from a automatic saving method. A popup screen will not appear
+      saveFile(gameState, saveName);	// instead it will save the game instantly.
     }
-    else {
+    else {								//otherwise a popup screen will appear to confirm saving operation.(Such as "save" command)
       if (saveFileDoesNotExist(saveName) || confirmOperation(SAVE_CONFIRM)) {
         saveFile(gameState, saveName);
       }

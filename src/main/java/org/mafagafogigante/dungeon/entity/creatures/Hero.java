@@ -394,35 +394,11 @@ public class Hero extends Creature {
       if (selectedItem.hasTag(Item.Tag.WEAPON)) {
         equipWeapon(selectedItem);
 	  }
-/*    else if(selectedItem.hasTag(Item.Tag.BAG)) {
-        equipBag(selectedItem);
-      } 
-*/	  else {
+	  else {
         Writer.write("You cannot equip that.");
       }
     }
   }
-/*  
-  //Method to equip a bag. Have to add bag to the Item class.
-  public void equipBag(Item bag) {
-    if (hasBag()) {
-      if (getBag() == bag) {
-        Writer.write("The bag has already been equipped.");
-        return;
-      }
-    }
-    Engine.rollDateAndRefresh(SECONDS_TO_EQUIP);
-    if (getInventory().hasItem(bag)) {
-      setBag(bag);
-      DungeonString string = new DungeonString();
-      string.append(getName() + " equipped " + bag.getName() + ".");
-      Writer.write(string);
-    } else {
-      HeroUtils.writeNoLongerInInventoryMessage(bag);
-    }   
-  }
-*/
-  
   /**
    * Attempts to drop items from the inventory.
    */
@@ -742,7 +718,7 @@ public class Hero extends Creature {
   }
 
   private void equipWeapon(Item weapon) {  
-    if (hasWeapon()) {
+    if (hasWeapon()) {	//if we have a weapon we can not equip another one without unequipping the weapon we already have.
       if (getWeapon() == weapon) {
         Writer.write(getName().getSingular() + " is already equipping " + weapon.getName().getSingular() + ".");
         return;
@@ -750,15 +726,15 @@ public class Hero extends Creature {
     } 
       Engine.rollDateAndRefresh(SECONDS_TO_EQUIP);	
       if (getInventory().hasItem(weapon)) {
-        if(weapon.getQualifiedName().contains("Bag")) {
-          setTotalCapacity(weapon.getWeaponComponent().getDamage());
+        if(weapon.getQualifiedName().contains("Bag")) {		//if the item that we trying to equip is a bag. We increase our carriage capacity instead of setting a weapon.
+          setTotalCapacity(weapon.getWeaponComponent().getDamage());	//getDamage() for bag items are used as inventory increase amount.
         }
         else {	
-          setWeapon(weapon);
+          setWeapon(weapon);	//if it is not a bag(then it is a weapon). we must set our weapon and increase our attack amount.
         }
         DungeonString string = new DungeonString();
         string.append(getName() + " equipped " + weapon.getQualifiedName() + ".");
-        if(weapon.getQualifiedName().contains("Bag")) {
+        if(weapon.getQualifiedName().contains("Bag")) {		
           string.append(" " + "Your total carriage capacity is now " + getTotalCapacity() + ".");
         }
         else {
